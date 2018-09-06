@@ -1,0 +1,143 @@
+.hero {
+  @extend .bg-cover;
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: all 1.5s linear;
+  &.is-inview {
+    opacity: 1;
+  }
+  @include mediaquery('small') {
+    @include ratio(320, 575);
+  }
+  @include mediaquery('medium') {
+    @include ratio(600, 625);
+  }
+  @include mediaquery('large') {
+    @include ratio(1000, 725);
+  }
+  @include mediaquery('extra-large') {
+    @include ratio(1200, 750);
+  }
+  @include mediaquery('extra-extra-large') {
+    @include ratio(1440, 775);
+  }
+}
+
+.hero__content {
+  @extend .absolute-full;
+  text-align: center;
+  margin: 0 auto;
+  @include mediaquery('small') {
+    max-width: 300px;
+    padding-top: 40px;
+  }
+  @include mediaquery('medium') {
+    max-width: 500px;
+    padding-top: 50px;
+  }
+  @include mediaquery('large') {
+      max-width: 620px;
+      padding-top: 60px;
+  }
+}
+
+.hero__logo {
+  @include mediaquery('small') {
+    width: 125px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  @include mediaquery('medium') {
+    width: 175px;
+    padding-bottom: 40px;
+  }
+  @include mediaquery('large') {
+    width: 200px;
+    padding-bottom: 50px;
+  }
+}
+
+.hero__title {
+  color: $c-white;
+  @include mediaquery('small') {
+    padding-bottom: 40px;
+  }
+  @include mediaquery('medium') {
+    padding-bottom: 50px;
+  }
+  @include mediaquery('large') {
+    padding-bottom: 90px;
+  }
+}
+
+.hero__intro {
+  color: $c-white;
+  @include mediaquery('small') {
+    padding-bottom: 30px;
+  }
+  @include mediaquery('medium') {
+    padding-bottom: 40px;
+  }
+  @include mediaquery('large') {
+    padding-bottom: 60px;
+  }
+}
+
+.hero__cta {
+  @include mediaquery('small') {
+    padding-bottom: 20px;
+  }
+  @include mediaquery('medium') {
+    padding-bottom: 30px;
+  }
+  @include mediaquery('large') {
+    padding-bottom: 50px;
+  }
+}
+
+.hero__tag {
+  color: $c-white;
+  @include mediaquery('small') {
+    padding-bottom: 20px;
+  }
+  @include mediaquery('medium') {
+    padding-bottom: 25px;
+  }
+  @include mediaquery('large') {
+    padding-bottom: 35px;
+  }
+}
+
+.hero__scroll {
+  position: relative;
+  animation: arrowmove .5s infinite ease-in 5s alternate;
+  @include mediaquery('small') {
+    padding-bottom: 10px;
+  }
+  @include mediaquery('medium') {
+    padding-bottom: 15px;
+  }
+  @include mediaquery('large') {
+    padding-bottom: 20px;
+  }
+}
+
+#hero__scroll-down {
+  cursor: pointer;
+}
+
+@keyframes arrowmove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 14px;
+  }
+}
+
+#jarallax-container-0 {
+  div {
+    background-position: center right !important;
+  }
+}

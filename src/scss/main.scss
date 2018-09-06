@@ -1,0 +1,24 @@
+// Reset
+@import 'src/scss/base/reset';
+@import 'src/scss/base/normalize';
+
+// Settings
+@import 'src/scss/base/variables';
+
+// base
+@import 'src/scss/base/helpers';
+@import 'src/scss/base/buttons';
+@import 'src/scss/base/typography';
+@import 'src/scss/base/fonts';
+
+// sections
+@import 'src/sections/age-gate/age-gate';
+@import 'src/sections/footer/footer';
+@import 'src/sections/form/form';
+@import 'src/sections/header/header';
+@import 'src/sections/hero/hero';
+@import 'src/sections/info-drink/info-drink';
+
+// node modules
+@import 'node_modules/hamburgers/_sass/hamburgers/hamburgers';
+@import 'node_modules/hamburgers/_sass/hamburgers/_base.scss';

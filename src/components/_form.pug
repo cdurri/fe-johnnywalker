@@ -1,0 +1,61 @@
+section.contact
+  .contact-intro__wrapper
+    .contact__title.main-heading
+      h2 XÁC NHẬN THÔNG TIN KHÁCH HÀNG
+    .contact__intro.p-normal
+      p Khách hàng để lại thông tin để nhận được giá tốt nhất và chính sách bán hàng hấp dẫn từ tổng đại lý phân phối của Johnnie Walker Việt Nam Chúng tôi cam kết uống có trách nhiệm
+  
+  form.contact__form(action="" method="post" name="contact_form")
+    .contact__wrapper#name-number
+      .contact__full-name-number__wrapper
+        label.full-name(for="full_name") name
+        +input('full_name', 'Họ và tên *', 'text')(value="",onkeyup="this.setAttribute('value', this.value)", required maxlength="50").contact__full-name
+        .name-number-warning  
+          .name__warning
+            .required__name-message 
+              span This is a required field *
+            .incorrect__format-message
+              span The format entered is incorrect (correct format = john smith, mary jane doe)
+      .contact__full-name-number__wrapper      
+        label.phone-number(for="full_name") phone number
+        +input('phone', 'Số điện thoại *', 'text')(value="",onkeyup="this.setAttribute('value', this.value)", required maxlength="30").contact__phone
+        .name-number-warning
+          .number__warning
+            .required__phone-message 
+              span This is a required field *
+            .incorrect__format-message
+              span The format entered is incorrect (correct format = 01xxxxxxxxx)
+        
+
+    .contact__wrapper#dob-email
+      select(name="dob-day")
+        option(value="notselected") Day
+        option(value="notselected") ---
+        - var n = 1, a = 1;
+          while n <= 31
+            option(value=n++) #{a++}
+      select(name="dob-month")
+        option(value="notselected") Month
+        option(value="notselected") -----
+        each valMonth in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+          option(value=valMonth) #{valMonth}
+      select(name="dob-year")
+        option(value="notselected") Year
+        option(value="notselected") ----
+        - var n = 2012, a = 2012;
+          while n > 1900
+            option(value=n--) #{a--}
+      +input('email', 'Email', 'email')(value="",onkeyup="this.setAttribute('value', this.value)", required maxlength="80").email-input
+
+    .contact__wrapper#message-area
+      +textarea('message', 'Nội dung cần tư vấn hoặc địa chỉ giao nhận')(maxlength="1000" cols="25" rows="6")
+    .contact__wrapper
+      +checkbox('contact', 'contact__submit').check-permission
+      label.label-contact(for="contact__submit") Tôi đồng ý nhận nội dung cho Diageo trong tương lai và thông tin của tôi sẽ được sử dụng cho các mục đích tiếp thị
+      .contact__conditions
+        p Bằng cách nhập, bạn chấp nhận chính sách bảo mật và của chúng tôi
+        p Điều kiện sử dụng
+      +button('submit', 'submit-button', 'XÁC NHẬN').button-submit
+        
+        
+    

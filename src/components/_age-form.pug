@@ -1,0 +1,42 @@
+.age-modal
+    img.age-modal__logo(src="img/jw-age-gate-logo.png") 
+    .age-modal__intro.p-normal
+      p Chúng tôi cam kết uống có trách nhiệm
+    .age-gate__direction.sub-heading
+      h2 Vui lòng xác nhận tuổi của bạn
+    hr.age-gate__divider
+    .age-gate__sub-heading.p-normal
+      p Enter your birthdate:
+
+    form.age-gate__form(action="" method="post" name="age-gate_form")
+      .age-gate__wrapper
+        select#age-gate__day(name="dob-day")
+          option(value="notselected") Day
+          option(value="notselected") ---
+          - var n = 1, a = 1;
+            while n <= 31
+              option(value=n++) #{a++}
+        select#age-gate__month(name="dob-month")
+          option(value="notselected") Month
+          option(value="notselected") -----
+          - var n = 1;
+          each valMonth in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            option(value=n++) #{valMonth}
+        select#age-gate__year(name="dob-year")
+          option(value="notselected") Year
+          option(value="notselected") ----
+          - var n = 2012, a = 2012;
+            while n > 1900
+              option(value=n--) #{a--}
+
+      .age-gate__disclaimer.p-small
+        p By entering, you accept our
+          span Privacy and Cookie Notice
+      .age-gate__cookie.p-normal
+        +checkbox('age-gate', 'age-gate')
+        label.label-age#label__age-gate(for="age-gate") Remember me on this device (unless shared)
+        
+        br
+      .age-gate__button
+        label(for="age-gate__submit")
+        +button('submit', 'age-gate__submit', 'ENTER').age-gate__enter
